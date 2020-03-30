@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="action_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">hms.patient</field>
+        </record>
+        <menuitem id="hms_root_menu" name="hms"/>
+        <menuitem id="patient_root_menu" name="patient" parent="hms_root_menu" action="action_patient"/>
+        <record id="patient_list" model="ir.ui.view">
+            <field name="name">Patients</field>
+            <field name="model">hms.patient</field>
+            <field name="arch" type="xml">
+                <group>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="Birth_date"/>
+                    <field name="History"/>
+                    <field name="cd_ratio"/>
+                    <field name="Blood_type"/>
+                    <field name="PCR"/>
+                    <field name="Address"/>
+                    <field name="Age"/>
+                    <field name="department_id"/>
+                    <field name="department_capacity"/>
+                    <field name="doctors_ids" />
+                </group>
+            </field>
+        </record>
+        <record id="patient_view" model="ir.ui.view">
+            <field name="name">Patients</field>
+            <field name="model">hms.patient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <header>
+                            <button string="Undetermined" type="object" name= "Status" attrs="{'invisible':[('state','!=','Undetermined')]}"></button>
+                             <button string="Good" type="object" name= "Status" attrs="{'invisible':[('state','!=','Good')]}" ></button>
+                             <button string="Fair" type="object" name= "Status" attrs="{'invisible':[('state','!=','Fair')]}" ></button>
+                             <button string="Serious" type="object" name= "Status" attrs="{'invisible':[('state','!=','Serious')]}"></button>
+                            <field name="state" widget="statusbar"  ></field>
+                        </header>
+                        <group>
+                            <field name="first_name" required="True"/>
+                            <field name="last_name" required="True"/>
+                            <field name="Birth_date"/>
+                            <field name="PCR" />
+<!--                            it doesn't applied-->
+                            <field name="cd_ratio" attrs="{'required':[('PCR','=',True)]}"/>
+                            <field name="Blood_type"/>
+                            <field name="Address"/>
+                            <field name="Age"/>
+                            <field name="department_id" domain="[('Is_opened','=','True')]"/>
+                            <field name="department_capacity" readonly="True"/>
+                            <field name="doctors_ids" attrs="{'readonly':[('department_id','=',False)]}" />
+                            <field name="History" attrs="{'invisible':[('Age','&lt;','50')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Logs">
+                                <field name="logs_id">
+                                   <tree>
+                                       <field name="create_uid" />
+                                       <field name="create_date" />
+                                       <field name="Description"/>
+                                   </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
