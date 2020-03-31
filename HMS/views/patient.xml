@@ -20,6 +20,7 @@
                     <field name="PCR"/>
                     <field name="Address"/>
                     <field name="Age"/>
+                    <field name="email"/>
                     <field name="department_id"/>
                     <field name="department_capacity"/>
                     <field name="doctors_ids" />
@@ -49,6 +50,7 @@
                             <field name="Blood_type"/>
                             <field name="Address"/>
                             <field name="Age"/>
+                            <field name="email"/>
                             <field name="department_id" domain="[('Is_opened','=','True')]"/>
                             <field name="department_capacity" readonly="True"/>
                             <field name="doctors_ids" attrs="{'readonly':[('department_id','=',False)]}" />

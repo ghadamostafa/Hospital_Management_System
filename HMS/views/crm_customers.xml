@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="crm_customers_inherit_tree_view" model="ir.ui.view">
+            <field name="name">crm_customers inherit tree view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" ></field>
+            <field name="arch" type="xml">
+                <field name="email" position="after">
+                    <field name="website"/>
+                </field>
+            </field>
+        </record>
+        <record id="crm_customers_inherit_form_view" model="ir.ui.view">
+            <field name="name">crm_customers inherit form view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="arch" type="xml">
+<!--                <field name="vat" position="attributes" >-->
+<!--                    <attribute name="invisible">1</attribute>-->
+<!--                </field>-->
+                <field name="vat" position="replace">
+                    <field name="vat" required="True"/>
+                </field>
+                <field name="industry_id" position="after">
+                    <field name="related_patient_id" />
+                </field>
+            </field>
+
+        </record>
+    </data>
+</odoo>

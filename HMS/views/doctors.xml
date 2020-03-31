@@ -19,9 +19,12 @@
                 <form>
                     <sheet>
                         <group>
+
+                            <field name="Image" widget='image'  string="File" />
+                        </group>
+                        <group>
                             <field name="first_name"/>
                             <field name="last_name"/>
-                            <field name="Image" widget='image' class="oe_avatar" options='{"preview_image":"image"}'/>
                         </group>
                     </sheet>
                 </form>

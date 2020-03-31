@@ -2,7 +2,7 @@
 
     'name': "hospital",
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['crm'],
     'author': "Author Name",
     'category': 'Category',
     'description': """
@@ -13,5 +13,6 @@
         'views/department.xml',
         'views/doctors.xml',
         'views/logs.xml',
+        'views/crm_customers.xml',
     ],
 }
