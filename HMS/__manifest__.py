@@ -16,5 +16,7 @@
         'views/doctors.xml',
         'views/logs.xml',
         'views/crm_customers.xml',
+        "report/hms_patient_template.xml",
+        "report/report.xml",
     ],
 }
