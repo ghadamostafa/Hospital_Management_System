@@ -9,6 +9,8 @@
     Description text
     """,
     'data': [
+        'security/res_groups.xml',
+        'security/ir.model.access.csv',
         'views/patient.xml',
         'views/department.xml',
         'views/doctors.xml',

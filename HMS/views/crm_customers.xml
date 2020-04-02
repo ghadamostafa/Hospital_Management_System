@@ -15,11 +15,8 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"></field>
             <field name="arch" type="xml">
-<!--                <field name="vat" position="attributes" >-->
-<!--                    <attribute name="invisible">1</attribute>-->
-<!--                </field>-->
-                <field name="vat" position="replace">
-                    <field name="vat" required="True"/>
+                <field name="vat" position="attributes" >
+                    <attribute name="required">1</attribute>
                 </field>
                 <field name="industry_id" position="after">
                     <field name="related_patient_id" />
