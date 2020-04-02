@@ -31,7 +31,23 @@
                         <h5>
                             Email:<span t-field="o.email"/>
                         </h5>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Info</th>
+                            </tr>
+<!--                                <td>logs_id.Description</td>-->
+                               <tr t-foreach='o.logs_id' t-as='line'>
 
+                                     <td><span t-esc="line.create_uid"/></td>
+                                     <td><span t-esc="line.create_date"/></td>
+                                     <td><span t-esc="line.Description"/></td>
+                                </tr>
+
+                        </table>
                     </div>
                 </t>
             </t>
