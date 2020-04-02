@@ -54,7 +54,7 @@
                             <field name="email"/>
                             <field name="department_id" domain="[('Is_opened','=',True)]"/>
                             <field name="department_capacity" readonly="True"/>
-                            <field name="doctors_ids" attrs="{'readonly':[('department_id','=',False)]}" groups="res_groups.hospital_manager" />
+                            <field name="doctors_ids" attrs="{'readonly':[('department_id','=',False)]}" groups="res_groups.hospital_manager,base.group_system" />
                             <field name="History" attrs="{'invisible':[('Age','&lt;','50')]}"/>
                         </group>
                         <notebook>

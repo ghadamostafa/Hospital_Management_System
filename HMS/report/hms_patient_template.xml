@@ -19,6 +19,19 @@
                         <h5>
                             Doctors:<span t-field="o.doctors_ids"/>
                         </h5>
+                        <h5>
+                            Birth_date:<span t-field="o.Birth_date"/>
+                        </h5>
+                        <h5>
+                            PCR:<span t-field="o.PCR"/>
+                        </h5>
+                        <h5>
+                            Blood_type:<span t-field="o.Blood_type"/>
+                        </h5>
+                        <h5>
+                            Email:<span t-field="o.email"/>
+                        </h5>
+
                     </div>
                 </t>
             </t>
