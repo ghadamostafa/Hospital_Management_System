@@ -47,7 +47,7 @@
                             <field name="Birth_date"/>
                             <field name="PCR" />
 <!--                            it doesn't applied-->
-                            <field name="cd_ratio" attrs="{'required':[('PCR','=',True)]}"/>
+                            <field name="cd_ratio" attrs="{'required':[('PCR','=',True)]}" widget="char"/>
                             <field name="Blood_type"/>
                             <field name="Address"/>
                             <field name="Age"/>

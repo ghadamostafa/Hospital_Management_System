@@ -33,6 +33,11 @@ class patient (models.Model):
             return{'warning':{'title':"warning",
                               'message':"PCR has been checked"}}
 
+    # @api.onchange('PCR')
+    # def check_pcr(self):
+    #     if self.PCR == True:
+    #         self.cd_ratio=null
+
     def Status(self):
         if self.state == 'Undetermined':
             self.state='Good'

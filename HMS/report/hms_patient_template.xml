@@ -2,12 +2,15 @@
 
     <template id="hms_patient_template">
         <t t-call="web.html_container">
-            <h1>Patient Status Report</h1>
+
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
+                        <div>
+                            <h1 style="color:red">Patient Status Report</h1>
+                        </div>
 
-                        <h5 style="color:red">
+                        <h5 >
                             Name: <span t-field="o.first_name"/>
                         </h5>
                         <h5>
@@ -33,16 +36,14 @@
                         </h5>
                     </div>
                     <div>
-                        <table>
-                            <tr>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Info</th>
-                            </tr>
-<!--                                <td>logs_id.Description</td>-->
+                        <table class="table table-bordered" style="border: 2px solid black;">
+                                <tr>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th>Info</th>
+                                </tr>
                                <tr t-foreach='o.logs_id' t-as='line'>
-
-                                     <td><span t-esc="line.create_uid"/></td>
+                                     <td><span t-esc="line.create_uid.name"/></td>
                                      <td><span t-esc="line.create_date"/></td>
                                      <td><span t-esc="line.Description"/></td>
                                 </tr>
